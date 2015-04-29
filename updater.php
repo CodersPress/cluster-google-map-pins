@@ -1,7 +1,7 @@
 <?php
 
 // Prevent loading this file directly and/or if the class is already defined
-if ( ! defined( 'ABSPATH' ) || class_exists( 'WP_CPL_Updater' ) )
+if ( ! defined( 'ABSPATH' ) || class_exists( 'WP_CLP_Updater' ) )
 	return;
 
 /**
@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) || class_exists( 'WP_CPL_Updater' ) )
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
-class WP_CPL_Updater {
+class WP_CLP_Updater {
 
 	/**
 	 * GitHub Updater version
@@ -128,7 +128,7 @@ class WP_CPL_Updater {
 	 * @return bool overrule or not
 	 */
 	public function overrule_transients() {
-		return ( defined( 'WP_CPL_FORCE_UPDATE' ) && WP_CPL_FORCE_UPDATE );
+		return ( defined( 'WP_CLP_FORCE_UPDATE' ) && WP_CLP_FORCE_UPDATE );
 	}
 
 
