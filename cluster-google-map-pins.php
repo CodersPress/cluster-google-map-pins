@@ -23,7 +23,7 @@ function clp_plugin_updater() {
 			'zip_url' => 'https://github.com/CodersPress/cluster-google-map-pins/zipball/master',
 			'sslverify' => true,
 			'requires' => '3.0',
-			'tested' => '4.2',
+			'tested' => '4.2.1',
 			'readme' => 'README.md',
 			'access_token' => '9ca6fb8fc23fe710242d52d73407a13607849e71',
 		);
