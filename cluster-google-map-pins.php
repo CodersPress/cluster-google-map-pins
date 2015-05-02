@@ -7,7 +7,7 @@ Version: 2015.05.02
 Updated: 2nd May 2015
 Author: sMarty
 Author URI: http://coderspress.com/
-License: http://creativecommons.org/licenses/GPL/2.0
+License: GPLv2
 */
 add_action( 'init', 'clp_plugin_updater' );
 function clp_plugin_updater() {
@@ -25,7 +25,7 @@ function clp_plugin_updater() {
 			'requires' => '3.0',
 			'tested' => '4.2.1',
 			'readme' => 'README.md',
-			'access_token' => '9ca6fb8fc23fe710242d52d73407a13607849e71',
+			'access_token' => '',
 		);
 		new WP_CLP_Updater( $config );
 	}
