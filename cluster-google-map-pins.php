@@ -20,7 +20,7 @@ function clp_plugin_updater() {
 			'api_url' => 'https://api.github.com/repos/CodersPress/cluster-google-map-pins',
 			'raw_url' => 'https://raw.github.com/CodersPress/cluster-google-map-pins/master',
 			'github_url' => 'https://github.com/CodersPress/cluster-google-map-pins',
-			'zip_url' => 'https://github.com/CodersPress/cluster-google-map-pins/archive/master.zip',
+			'zip_url' => 'https://github.com/CodersPress/cluster-google-map-pins/zipball/master',
 			'sslverify' => true,
 			'requires' => '3.0',
 			'tested' => '4.2.1',
