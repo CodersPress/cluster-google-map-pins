@@ -25,7 +25,7 @@ function clp_plugin_updater() {
 			'requires' => '3.0',
 			'tested' => '4.2.1',
 			'readme' => 'README.md',
-			'access_token' => 'c13242b34bed3ce0ce75bbc7a00216fc08b8da9b',
+			'access_token' => '',
 		);
 		new WP_CLP_Updater( $config );
 	}
