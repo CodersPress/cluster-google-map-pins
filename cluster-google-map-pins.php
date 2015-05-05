@@ -196,9 +196,6 @@ add_action( 'wp_footer', 'cluster_pins');
 function cluster_pins(){
 if ( is_home() ) {
 ?>
-<style>
-
-</style>
 <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js" type="text/javascript"></script>
 <script type="text/javascript">
 setTimeout(function(){
@@ -244,7 +241,7 @@ for (i = 0; i < listing_item.length; i++) {
         icon: map_icon,
         map: map,
         title: ptitle,
-        info: '<div class="wlt-marker-wrapper"><div class="wlt-marker-title"> <a href="'+ plink +'">'+ ptitle +'</a></div> <div class="wlt-marker-content">'+pinfo+'<div class="clearfix"></div><div class="readmore"><a href="'+ plink +'"><?php global $CORE; echo $CORE->_e(array('button','40','flag_noedit')); ?></a></div><div class="clearfix"></div> <div class="close" onClick=\'javascript:infoBox.close();\'><span class="glyphicon glyphicon-remove"></span></div>',
+        info: '<div class="wlt-marker-wrapper"><div class="wlt-marker-title"> <a href="'+ plink +'">'+ ptitle +'</a>  <div class="close" onClick=\'javascript:infoBox.close();\'><span class="glyphicon glyphicon-remove"></span></div> </div><div class="wlt-marker-content" style="padding-left:5px;">'+pinfo+'<div class="readmore"><a href="'+ plink +'"><?php global $CORE; echo $CORE->_e(array('button','40','flag_noedit')); ?></a></div><div class="clearfix"></div></div>',
     }
     marker = new google.maps.Marker(markerOptions);
     markers.push(marker);
@@ -252,12 +249,13 @@ for (i = 0; i < listing_item.length; i++) {
         content: document.createElement("div"),
         pixelOffset: new google.maps.Size(-10, -220),
         pane: "floatPane",
-        enableEventPropagation: true
+        enableEventPropagation: true,
+        closeBoxURL: ""
     };
     infoBox = new InfoBox(infoBoxOptions);
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
         return function () {
-            infoBox.close();
+            //infoBox.close();
             infoBox.setContent(this.info);
             infoBox.open(map, this);
         }
