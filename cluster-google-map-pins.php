@@ -3,8 +3,8 @@
 Plugin Name: Cluster Pro Map Markers
 Plugin URI: http://coderspress.com/
 Description: Grid-based clustering works by dividing the map into squares of a certain size and then grouping the markers into each grid square.
-Version: 2015.0503
-Updated: 3rd May 2015
+Version: 2015.0507
+Updated: 7th May 2015
 Author: sMarty
 Author URI: http://coderspress.com/
 License: http://creativecommons.org/licenses/GPL/2.0
@@ -22,11 +22,11 @@ function clp_plugin_updater() {
 			'zip_url' => 'https://github.com/CodersPress/cluster-google-map-pins/zipball/master',
 			'sslverify' => true,
 			'requires' => '3.0',
-			'tested' => '4.2.1',
+			'tested' => '4.2.2',
 			'readme' => 'README.md',
 			'access_token' => 'de82b27a4c9319264b744100a91ec49d952d59c9',
 		);
-		new WP_CLP_Updater( $config );
+		new WP_CP_UPDATER( $config );
 	}
 }
 
