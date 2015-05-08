@@ -23,6 +23,9 @@ function clp_plugin_updater() {
 			'github_url' => 'https://github.com/CodersPress/cluster-google-map-pins',
 			'zip_url' => 'https://github.com/CodersPress/cluster-google-map-pins/zipball/master',
 			'sslverify' => true,
+			'requires' => '3.0',
+			'tested' => '4.2.2',
+			'readme' => 'README.md',
 			'access_token' => 'de82b27a4c9319264b744100a91ec49d952d59c9',
 		);
 		new WP_CMP_UPDATER( $config );
