@@ -25,7 +25,7 @@ function clp_plugin_updater() {
 			'sslverify' => true,
 			'access_token' => 'de82b27a4c9319264b744100a91ec49d952d59c9',
 		);
-		new WP_CP_UPDATER( $config );
+		new WP_CMP_UPDATER( $config );
 	}
 }
 
