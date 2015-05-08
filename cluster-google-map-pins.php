@@ -7,6 +7,8 @@ Version: 2015.0507
 Updated: 7th May 2015
 Author: sMarty
 Author URI: http://coderspress.com/
+WP_Requires: 3.8.1
+WP_Compatible: 4.2.2
 License: http://creativecommons.org/licenses/GPL/2.0
 */
 add_action( 'init', 'clp_plugin_updater' );
