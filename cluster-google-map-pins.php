@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cluster Pro Map Markers
 Plugin URI: http://coderspress.com/
-Description: lklkllkGrid-based clustering works by dividing the map into squares of a certain size and then grouping the markers into each grid square.
+Description: hghhhghgGrid-based clustering works by dividing the map into squares of a certain size and then grouping the markers into each grid square.
 Version: 2015.0508
 Updated: 8th May 2015
 Author: sMarty
