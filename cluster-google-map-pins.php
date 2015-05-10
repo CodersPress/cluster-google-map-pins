@@ -28,7 +28,6 @@ function clp_plugin_updater() {
 		new WP_CMP_UPDATER( $config );
 	}
 }
-
 // create custom plugin settings menu
 add_action('admin_menu', 'cluster_map_menu');
 function cluster_map_menu() {

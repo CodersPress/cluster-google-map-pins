@@ -25,7 +25,6 @@ class WP_CMP_UPDATER {
 	 *
 	 * @since 1.0
 	 * @param array $config the configuration required for the updater to work
-	 * @see has_minimum_config()
 	 * @return void
 	 */
 	public function __construct( $config = array() ) {
