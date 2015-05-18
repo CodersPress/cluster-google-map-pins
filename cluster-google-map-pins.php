@@ -252,7 +252,6 @@ for (i = 0; i < listing_item.length; i++) {
     infoBox = new InfoBox(infoBoxOptions);
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
         return function () {
-            //infoBox.close();
             infoBox.setContent(this.info);
             infoBox.open(map, this);
         }
