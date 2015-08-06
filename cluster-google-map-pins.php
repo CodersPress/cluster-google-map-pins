@@ -3,12 +3,12 @@
 Plugin Name: Cluster Pro Map Markers
 Plugin URI: http://coderspress.com/
 Description: Grid-based clustering works by dividing the map into squares of a certain size and then grouping the markers into each grid square.
-Version: 2015.0729
-Updated: 29th July 2015
+Version: 2015.0806
+Updated: 8th August 2015
 Author: sMarty
 Author URI: http://coderspress.com/
 WP_Requires: 3.8.1
-WP_Compatible: 4.2.3
+WP_Compatible: 4.2.4
 License: http://creativecommons.org/licenses/GPL/2.0
 */
 add_action( 'init', 'clp_plugin_updater' );
@@ -48,11 +48,12 @@ function register_mapsettings() {
 	register_setting( 'cluster-map-settings-group', 'gridSize_option' );
 	register_setting( 'cluster-map-settings-group', 'minimum_zoom' );
 	register_setting( 'cluster-map-settings-group', 'm1_font_color' );
-    register_setting( 'cluster-map-settings-group', 'm2_font_color' );
+	register_setting( 'cluster-map-settings-group', 'm2_font_color' );
 	register_setting( 'cluster-map-settings-group', 'm3_font_color' );
 	register_setting( 'cluster-map-settings-group', 'cluster_m1_img');
-    register_setting( 'cluster-map-settings-group', 'cluster_m2_img');
+	register_setting( 'cluster-map-settings-group', 'cluster_m2_img');
 	register_setting( 'cluster-map-settings-group', 'cluster_m3_img');
+	register_setting( 'cluster-map-settings-group', 'change_location_text');
 }
 function cluster_map_defaults()
 {
@@ -65,6 +66,7 @@ function cluster_map_defaults()
         'cluster_m1_img' => plugins_url( 'cluster-google-map-pins/images/m1.png' ),
         'cluster_m2_img' => plugins_url( 'cluster-google-map-pins/images/m2.png' ),
         'cluster_m3_img' => plugins_url( 'cluster-google-map-pins/images/m3.png' ),
+        'change_location_text' => 'Change Location',
     );
     foreach ( $option as $key => $value )
     {
@@ -184,6 +186,10 @@ var upload_image_button=false;
 </select> Recommend: 4
 <br />Reduces map(globe) overlapping.
 </td></tr>
+        <tr valign="top">
+        <th scope="row">Change location Text</th>
+        <td><input id="change_location_text" type="text" size="40" name="change_location_text" value="<?php echo get_option( 'change_location_text' ); ?>" /></td></tr>
+
     </table>
     <?php submit_button(); ?>
 </form>
@@ -266,6 +272,26 @@ var bounds = new google.maps.LatLngBounds();
 for (var i = 0, len = latlnglist.length; i < len; i++) {
     bounds.extend(latlnglist[i]);
 }
+
+var infoWindowContent = '<a href="javascript:void(0);" onclick="GMApMyLocation();" data-toggle="modal" data-target="#MyLocationModal"><?php echo get_option('change_location_text'); ?></a>';
+
+    // Initialise the inforWindow
+    var infoWindow = new google.maps.InfoWindow({
+        content: infoWindowContent
+    });
+                
+    // Add a marker to the map based on our coordinates
+    var marker2 = new google.maps.Marker({
+        position: new google.maps.LatLng($mylat, $mylog),
+        map: map,
+        title: '<?php echo get_option('change_location_text'); ?>'
+    });
+
+    // Display our info window when the marker is clicked
+    google.maps.event.addListener(marker2, 'click', function() {
+        infoWindow.open(map, marker2);
+    });
+
 var miniZoom = google.maps.event.addListener(map, 'zoom_changed', function() {
     if (map.getZoom() < <?php echo get_option( 'minimum_zoom');?> ) map.setZoom(<?php echo get_option( 'minimum_zoom');?>);
   });
