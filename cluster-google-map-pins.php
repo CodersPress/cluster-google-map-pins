@@ -4,7 +4,7 @@ Plugin Name: Cluster Pro Map Markers
 Plugin URI: http://coderspress.com/
 Description: Grid-based clustering works by dividing the map into squares of a certain size and then grouping the markers into each grid square.
 Version: 2015.0806
-Updated: 8th August 2015
+Updated: 6th August 2015
 Author: sMarty
 Author URI: http://coderspress.com/
 WP_Requires: 3.8.1
